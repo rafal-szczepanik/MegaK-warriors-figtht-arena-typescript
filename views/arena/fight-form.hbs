@@ -1,0 +1,48 @@
+<!--<div class="container"></div>-->
+<h2>Wybierz wojowników którzy się ze sobą zmierzą!</h2>
+
+<table>
+  <thead>
+    <tr>
+      <td>Imię</td>
+      <td>Siła</td>
+      <td>Obrona</td>
+      <td>Wytrzymałość</td>
+      <td>Zwinność</td>
+    </tr>
+  </thead>
+  {{#each warriorList}}
+  <tbody>
+    <tr>
+      <td>{{this.name}}</td>
+      <td>{{this.strength}}</td>
+      <td>{{this.defence}}</td>
+      <td>{{this.durability}}</td>
+      <td>{{this.agility}}</td>
+    </tr>
+  {{/each}}
+</tbody>
+</table>
+<div class="wrapper-container">
+  <form action="/arena/fight" method="POST">
+    <label>Wojownik <select name="name" selected="selected">
+      <option value="">Brak</option>
+      {{#each warriorList}}
+        <option value="{{this.id}}">
+        {{this.name}}
+        </option>
+      {{/each}}
+    </select>
+    </label>
+    <label>Wojownik <select name="name">
+      <option value="">Brak</option>
+      {{#each warriorList}}
+        <option value="{{this.id}}">
+        {{this.name}}
+        </option>
+      {{/each}}
+    </select>
+    </label>
+    <button type="submit">Rozpocznij walkę na śmierć i życie!</button>
+  </form>
+</div>

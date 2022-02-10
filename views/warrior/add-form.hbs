@@ -1,0 +1,29 @@
+<div>
+  <h3>Rozdaj punkty</h3>
+  <form action="/warrior/fight" method="POST">
+    <table>
+      <tr>
+        <td>Imię:</td>
+        <td><input name="name" type="text" required></td>
+
+      </tr>
+      <tr>
+        <td>Siła:</td>
+        <td><input name="strength" min="1" max="7" type="number" required></td>
+      </tr>
+      <tr>
+        <td>Obrona:</td>
+        <td><input name="defence" min="1" max="7" type="number" required></td>
+      </tr>
+      <tr>
+        <td>Wytrzymałość:</td>
+        <td><input name="durability" min="1" max="7" type="number" required></td>
+      </tr>
+      <tr>
+        <td>Zwinność:</td>
+        <td><input name="agility" min="1" max="7" type="number" required></td>
+      </tr>
+    </table>
+    <button href="/warrior">Stwórz wojownika!</button>
+  </form>
+</div>
