@@ -1,6 +1,10 @@
 import {WarriorRecord} from "../records/warrior.record";
 
-export function fight(warrior1: WarriorRecord, warrior2: WarriorRecord): WarriorRecord {
+export function fight(warrior1: WarriorRecord, warrior2: WarriorRecord): {
+    winner: WarriorRecord,
+    log: string[]
+} {
+    const log = []
     const warriorObj1 = {
         hp: warrior1.durability * 10,
         dp: warrior1.defence,
@@ -33,5 +37,5 @@ export function fight(warrior1: WarriorRecord, warrior2: WarriorRecord): Warrior
 
     }
     const winner = attacker.warrior
-    return winner
+    return {winner, log}
 }
